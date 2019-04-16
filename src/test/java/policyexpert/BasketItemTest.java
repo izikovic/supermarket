@@ -11,14 +11,14 @@ public class BasketItemTest {
 
     @Test
     public void testItemUnitPrice() {
-       BasketItem b = new BasketItem(coke, new Quantity(1, QuantityType.UNIT));
+       var b = new BasketItem(coke, new Quantity(1, QuantityType.UNIT));
 
        assertEquals(70, b.cost());
     }
 
     @Test
     public void testItemWeight() {
-        BasketItem b = new BasketItem(oranges, new Quantity(200, QuantityType.G));
+        var b = new BasketItem(oranges, new Quantity(200, QuantityType.G));
 
         assertEquals(40, b.cost());
     }
