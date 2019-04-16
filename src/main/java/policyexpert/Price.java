@@ -1,12 +1,15 @@
 package policyexpert;
 
-public class Price {
-    private final long price;
-    private final QuantityType type;
+public abstract class Price {
+    protected final long price;
 
-    public Price(long price, QuantityType type) {
+    public Price(long price) {
         this.price = price;
-        this.type = type;
     }
 
+    public long getPrice() {
+        return price;
+    }
+
+    public abstract long cost(long quantity);
 }
