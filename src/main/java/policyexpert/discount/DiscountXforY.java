@@ -18,15 +18,20 @@ public class DiscountXforY implements Discount {
     }
 
     public long discount(Set<BasketItem> items) {
-        long count = items.stream()
+        var count = items.stream()
                 .filter(x -> x.getItem() == item)
                 .mapToLong(x -> x.getQuantity().value())
                 .sum()
                 ;
 
-        long discountTimes = (count / amountX);
-        long discount = item.getPrice().getPrice() * (amountX - amountY);
+        var discountTimes = (count / amountX);
+        var discount = item.getPrice().getPrice() * (amountX - amountY);
 
         return discount * discountTimes;
+    }
+
+    @Override
+    public String toString() {
+        return item + " " + amountX + " for " + amountY;
     }
 }

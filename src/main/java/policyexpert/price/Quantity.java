@@ -18,6 +18,13 @@ public class Quantity {
         }
     }
 
+    public String toString() {
+        switch(type) {
+            case UNIT: return String.valueOf(value());
+            default: return (value() / 1000) + "." + (value() % 1000) + " kg";
+        }
+    }
+
     public static Quantity unit(long quantity) {
         return new Quantity(quantity, QuantityType.UNIT);
     }
@@ -28,5 +35,9 @@ public class Quantity {
 
     public static Quantity kg(long quantity) {
         return new Quantity(quantity, QuantityType.KG);
+    }
+
+    private enum QuantityType {
+        UNIT, KG, G
     }
 }

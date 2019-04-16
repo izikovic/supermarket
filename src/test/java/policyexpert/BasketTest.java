@@ -32,6 +32,7 @@ public class BasketTest {
         b.addItem(oranges, Quantity.g(200));
 
         assertEquals(330, b.subtotal());
+        assertEquals(b.subtotal(), b.total());
     }
 
     @Test
@@ -50,5 +51,15 @@ public class BasketTest {
 
         assertEquals(330, b.subtotal());
         assertEquals(90, b.discounts());
+        assertEquals(240, b.total());
+
+        b.printReceipt();
+    }
+
+    @Test
+    public void testEmptyBasket() {
+        var b = new Basket();
+
+        assertEquals(0, b.subtotal());
     }
 }

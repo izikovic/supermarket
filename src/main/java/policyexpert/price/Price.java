@@ -12,4 +12,8 @@ public abstract class Price {
     }
 
     public abstract long cost(long quantity);
+
+    public static String priceToString(long price) {
+        return "£" + (price / 100) + "." + (price % 100);
+    };
 }

@@ -18,4 +18,8 @@ public class Item {
     public Price getPrice() {
         return price;
     }
+
+    public String toString() {
+        return name;
+    }
 }

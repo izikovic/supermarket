@@ -18,15 +18,20 @@ public class DiscountXforPrice implements Discount {
     }
 
     public long discount(Set<BasketItem> items) {
-        long count = items.stream()
+        var count = items.stream()
                 .filter(x -> x.getItem() == item)
                 .mapToLong(x -> x.getQuantity().value())
                 .sum()
                 ;
 
-        long discountTimes = (count / amountX);
-        long discount = item.getPrice().cost(amountX) - price.getPrice();
+        var discountTimes = (count / amountX);
+        var discount = item.getPrice().cost(amountX) - price.getPrice();
 
         return discount * discountTimes;
+    }
+
+    @Override
+    public String toString() {
+        return item + " " + amountX + " for " + Price.priceToString(price.getPrice());
     }
 }

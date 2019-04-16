@@ -11,7 +11,6 @@ import static org.junit.Assert.assertEquals;
 
 public class BasketItemTest {
     private Item coke = new Item("coke", new PricePerUnit(70));
-    private Item beans = new Item("beans", new PricePerUnit(50));
     private Item oranges = new Item("oranges", new PricePerWeight(199));
 
     @Test
