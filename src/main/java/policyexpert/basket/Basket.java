@@ -45,7 +45,9 @@ public class Basket {
         System.out.println("Subtotal: " + Price.priceToString(subtotal()));
         System.out.println();
         for (Discount d : discounts) {
-            System.out.println(d + "\t" + Price.priceToString(d.discount(basketItems)));
+            var discountValue = d.discount(basketItems);
+            if (discountValue > 0)
+                System.out.println(d + "\t" + Price.priceToString(discountValue));
         }
         System.out.println("Total savings: " + Price.priceToString(discounts()));
         System.out.println();

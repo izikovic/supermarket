@@ -10,6 +10,7 @@ import policyexpert.price.PricePerWeight;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Shop {
     private List<Item> items;
@@ -32,6 +33,10 @@ public class Shop {
             add(beans3for2);
             add(coke2forAPound);
         }};
+    }
+
+    public Optional<Item> getItemByName(String name) {
+        return items.stream().filter(x -> x.getName().equals(name)).findFirst();
     }
 
     public Basket newBasket() {
