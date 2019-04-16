@@ -1,6 +1,7 @@
 package policyexpert;
 
 import org.junit.Test;
+import policyexpert.price.PricePerUnit;
 
 import static org.junit.Assert.assertEquals;
 

@@ -1,4 +1,4 @@
-package policyexpert;
+package policyexpert.price;
 
 public class PricePerUnit extends Price {
 

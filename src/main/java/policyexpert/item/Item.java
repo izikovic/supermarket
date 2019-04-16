@@ -1,4 +1,6 @@
-package policyexpert;
+package policyexpert.item;
+
+import policyexpert.price.Price;
 
 public class Item {
     private final String name;

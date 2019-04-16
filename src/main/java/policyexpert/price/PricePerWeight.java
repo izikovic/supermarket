@@ -1,4 +1,4 @@
-package policyexpert;
+package policyexpert.price;
 
 //per 1000
 public class PricePerWeight extends Price {

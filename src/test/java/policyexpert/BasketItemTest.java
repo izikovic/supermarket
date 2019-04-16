@@ -1,6 +1,11 @@
 package policyexpert;
 
 import org.junit.Test;
+import policyexpert.basket.BasketItem;
+import policyexpert.item.Item;
+import policyexpert.price.PricePerUnit;
+import policyexpert.price.PricePerWeight;
+import policyexpert.price.Quantity;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,14 +16,14 @@ public class BasketItemTest {
 
     @Test
     public void testItemUnitPrice() {
-       var b = new BasketItem(coke, new Quantity(1, QuantityType.UNIT));
+       var b = new BasketItem(coke, Quantity.unit(1));
 
        assertEquals(70, b.cost());
     }
 
     @Test
     public void testItemWeight() {
-        var b = new BasketItem(oranges, new Quantity(200, QuantityType.G));
+        var b = new BasketItem(oranges, Quantity.g(200));
 
         assertEquals(40, b.cost());
     }

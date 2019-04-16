@@ -1,4 +1,4 @@
-package policyexpert;
+package policyexpert.price;
 
 public abstract class Price {
     protected final long price;

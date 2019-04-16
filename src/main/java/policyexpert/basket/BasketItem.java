@@ -1,4 +1,7 @@
-package policyexpert;
+package policyexpert.basket;
+
+import policyexpert.item.Item;
+import policyexpert.price.Quantity;
 
 public class BasketItem {
     private final Item item;
